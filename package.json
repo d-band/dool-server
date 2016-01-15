@@ -1,8 +1,11 @@
 {
   "name": "dool-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "d-band tool & dev tool",
-  "main": "index.js",
+  "main": "lib/server.js",
+  "bin": {
+    "dool-server": "cli.js"
+  },
   "scripts": {
     "test": "make test"
   },
@@ -20,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/d-band/dool-server/issues"
   },
-  "homepage": "https://github.com/d-band/dool-server#readme"
+  "homepage": "https://github.com/d-band/dool-server#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "dool-build": "0.0.7",
+    "ip": "^1.1.0",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
