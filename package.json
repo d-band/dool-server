@@ -1,10 +1,10 @@
 {
   "name": "dool-server",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "d-band tool & dev tool",
   "main": "lib/server.js",
   "bin": {
-    "dool-server": "node --harmony cli.js"
+    "dool-server": "cli.js"
   },
   "scripts": {
     "test": "make test"
