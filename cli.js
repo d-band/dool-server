@@ -10,4 +10,5 @@ program
   .parse(process.argv);
 
 program.cwd = process.cwd();
+require("harmonize")();
 require('./lib/server')(program);
