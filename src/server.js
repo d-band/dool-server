@@ -1,6 +1,6 @@
 'use strict';
 
-const ip = require('ip');
+const address = require('ip').address;
 const build = require('dool-build');
 const WebpackDevServer = require('webpack-dev-server');
 
@@ -12,27 +12,31 @@ module.exports = function(args) {
   });
 
   cfg.devtool = '#source-map';
-  cfg.plugins = [...cfg.plugins, new webpack.HotModuleReplacementPlugin()];
+  cfg.plugins.push(new webpack.HotModuleReplacementPlugin());
 
   const compiler = webpack(cfg);
 
-  args.stats = {
-    colors: true,
-    chunks: false,
-    modules: false,
-    chunkModules: false,
-    children: false,
-    hash: false,
-    version: false
+  const opts = {
+    https: !!args.https,
+    stats: {
+      colors: true,
+      chunks: false,
+      modules: false,
+      chunkModules: false,
+      children: false,
+      hash: false,
+      version: false
+    }
   };
-  // webpack config passed to webpack-dev-server
-  const opts = Object.assign(cfg.devServer || {}, args);
-  const server = new WebpackDevServer(compiler, opts);
 
-  let port = opts.port || 8000;
+  // webpack config passed to webpack-dev-server
+  Object.assign(opts, cfg.devServer);
+
+  let port = args.port || 8000;
+  let server = new WebpackDevServer(compiler, opts);
   server.listen(port, '0.0.0.0', function() {});
 
-  let url = (opts.https ? 'https://' : 'http://') + ip.address() + ':' + port;
+  let url = (args.https ? 'https://' : 'http://') + address() + ':' + port;
   console.log('Starting up dool server.');
   console.log('Server url: ' + '\x1B[36m ' + url + ' \x1B[39m');
   console.log('Hit CTRL-C to stop the server');

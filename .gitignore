@@ -26,3 +26,4 @@ tmp/
 _site
 coverage
 test/fixtures/**/dist
+lib
