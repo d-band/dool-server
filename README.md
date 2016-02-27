@@ -5,6 +5,7 @@ dool-server
 
 [![NPM version](https://img.shields.io/npm/v/dool-server.svg)](https://www.npmjs.com/package/dool-server)
 [![NPM downloads](https://img.shields.io/npm/dm/dool-server.svg)](https://www.npmjs.com/package/dool-server)
+[![Dependency Status](https://david-dm.org/d-band/dool-server.svg)](https://david-dm.org/d-band/dool-server)
 
 ## Install
 
