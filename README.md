@@ -3,6 +3,9 @@ dool-server
 
 > d-band tool & dev tool based on webpack
 
+[![NPM version](https://img.shields.io/npm/v/dool-server.svg)](https://www.npmjs.com/package/dool-server)
+[![NPM downloads](https://img.shields.io/npm/dm/dool-server.svg)](https://www.npmjs.com/package/dool-server)
+
 ## Install
 
 ```bash
