@@ -22,6 +22,15 @@ export default function(args) {
 
   const compiler = webpack(cfg);
 
+  // Hack: remove extract-text-webpack-plugin log
+  compiler.plugin('done', function(stats) {
+    stats.stats.forEach((stat) => {
+      stat.compilation.children = stat.compilation.children.filter((child) => {
+        return child.name !== 'extract-text-webpack-plugin';
+      });
+    });
+  });
+
   const opts = {
     https: !!args.https,
     stats: {
