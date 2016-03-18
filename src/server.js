@@ -1,18 +1,24 @@
 'use strict';
 
-const address = require('ip').address;
-const build = require('dool-build');
-const WebpackDevServer = require('webpack-dev-server');
+import { address } from 'ip';
+import build from 'dool-build';
+import WebpackDevServer from 'webpack-dev-server';
 
-module.exports = function(args) {
+export default function(args) {
   const webpack = build.webpack;
   // Get config.
-  const cfg = build.config({
+  let cfg = build.config({
     cwd: args.cwd
   });
 
-  cfg.devtool = '#source-map';
-  cfg.plugins.push(new webpack.HotModuleReplacementPlugin());
+  cfg = Array.isArray(cfg) ? cfg : [cfg];
+
+  let devServer = {};
+  cfg.forEach((v) => {
+    v.devtool = '#source-map';
+    v.plugins.push(new webpack.HotModuleReplacementPlugin());
+    Object.assign(devServer, v.devServer);
+  });
 
   const compiler = webpack(cfg);
 
@@ -20,17 +26,17 @@ module.exports = function(args) {
     https: !!args.https,
     stats: {
       colors: true,
+      children: true,
       chunks: false,
       modules: false,
       chunkModules: false,
-      children: false,
       hash: false,
       version: false
     }
   };
 
   // webpack config passed to webpack-dev-server
-  Object.assign(opts, cfg.devServer);
+  Object.assign(opts, devServer);
 
   let port = args.port || 8000;
   let server = new WebpackDevServer(compiler, opts);
