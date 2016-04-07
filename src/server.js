@@ -7,20 +7,18 @@ import WebpackDevServer from 'webpack-dev-server';
 export default function(args) {
   const webpack = build.webpack;
   // Get config.
-  let cfg = build.config({
+  let cfgs = build.config({
     cwd: args.cwd
   });
 
-  cfg = Array.isArray(cfg) ? cfg : [cfg];
-
   let devServer = {};
-  cfg.forEach((v) => {
+  cfgs.forEach((v) => {
     v.devtool = '#source-map';
     v.plugins.push(new webpack.HotModuleReplacementPlugin());
     Object.assign(devServer, v.devServer);
   });
 
-  const compiler = webpack(cfg);
+  const compiler = webpack(cfgs);
 
   // Hack: remove extract-text-webpack-plugin log
   args.verbose || compiler.plugin('done', function(stats) {
@@ -36,11 +34,11 @@ export default function(args) {
     stats: {
       colors: true,
       children: true,
-      chunks: !args.verbose,
-      modules: !args.verbose,
-      chunkModules: !args.verbose,
-      hash: !args.verbose,
-      version: !args.verbose
+      chunks: !!args.verbose,
+      modules: !!args.verbose,
+      chunkModules: !!args.verbose,
+      hash: !!args.verbose,
+      version: !!args.verbose
     }
   };
 
