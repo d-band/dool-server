@@ -1,6 +1,6 @@
 {
   "name": "dool-server",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "d-band tool & dev tool",
   "main": "lib/server.js",
   "bin": {
@@ -26,16 +26,16 @@
   },
   "homepage": "https://github.com/d-band/dool-server#readme",
   "dependencies": {
-    "commander": "~2.9.0",
-    "dool-build": "~1.2.5",
-    "ip": "~1.1.3",
-    "webpack-dev-server": "~1.16.1"
+    "commander": "^2.9.0",
+    "dool-build": "^1.2.5",
+    "ip": "^1.1.3",
+    "webpack-dev-server": "^1.16.1"
   },
   "devDependencies": {
-    "babel-cli": "~6.16.0",
-    "babel-plugin-add-module-exports": "~0.2.1",
-    "babel-plugin-transform-object-assign": "~6.8.0",
-    "babel-preset-es2015": "~6.16.0",
-    "babel-preset-stage-0": "~6.16.0"
+    "babel-cli": "^6.16.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
   }
 }
