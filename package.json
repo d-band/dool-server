@@ -1,6 +1,6 @@
 {
   "name": "dool-server",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "d-band tool & dev tool",
   "main": "lib/server.js",
   "bin": {
