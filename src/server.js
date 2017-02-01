@@ -13,7 +13,8 @@ export default function(args) {
 
   let devServer = {};
   cfgs.forEach((v) => {
-    v.devtool = 'eval';
+    v.output.pathinfo = true;
+    v.devtool = 'cheap-module-source-map';
     v.plugins.push(new webpack.HotModuleReplacementPlugin());
     Object.assign(devServer, v.devServer);
   });

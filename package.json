@@ -1,6 +1,6 @@
 {
   "name": "dool-server",
-  "version": "1.2.4",
+  "version": "2.0.0-beta.2",
   "description": "d-band tool & dev tool",
   "main": "lib/server.js",
   "bin": {
@@ -27,9 +27,9 @@
   "homepage": "https://github.com/d-band/dool-server#readme",
   "dependencies": {
     "commander": "^2.9.0",
-    "dool-build": "^1.2.5",
+    "dool-build": "beta",
     "ip": "^1.1.4",
-    "webpack-dev-server": "^1.16.3"
+    "webpack-dev-server": "^2.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
