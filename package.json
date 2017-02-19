@@ -29,7 +29,7 @@
     "commander": "^2.9.0",
     "dool-build": "beta",
     "ip": "^1.1.4",
-    "webpack-dev-server": "^2.4.0"
+    "webpack-dev-server": "^2.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
