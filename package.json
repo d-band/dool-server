@@ -28,7 +28,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "dool-build": "^2.0.0",
-    "ip": "^1.1.4",
+    "ip": "^1.1.5",
     "webpack-dev-server": "^2.4.1"
   },
   "devDependencies": {
