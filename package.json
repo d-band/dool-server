@@ -27,7 +27,7 @@
   "homepage": "https://github.com/d-band/dool-server#readme",
   "dependencies": {
     "commander": "^2.9.0",
-    "dool-build": "^2.1.0",
+    "dool-build": "^2.1.1",
     "ip": "^1.1.5",
     "webpack-dev-server": "^2.4.2"
   },
