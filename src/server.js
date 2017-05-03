@@ -11,7 +11,7 @@ export default function(args) {
     cwd: args.cwd
   });
 
-  let devServer = {};
+  let devServer = { disableHostCheck: true };
   cfgs.forEach((v) => {
     v.output.pathinfo = true;
     v.devtool = 'cheap-module-source-map';
