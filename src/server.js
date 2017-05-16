@@ -8,7 +8,8 @@ export default function(args) {
   const webpack = build.webpack;
   // Get config.
   let cfgs = build.config({
-    cwd: args.cwd
+    cwd: args.cwd,
+    extract: args.extract
   });
 
   let devServer = { disableHostCheck: true };
